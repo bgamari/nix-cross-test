@@ -1,5 +1,6 @@
+{nix ? (import ./nixpkgs)}:
+
 let
-  nix = import ../nixpkgs;
   nixpkgs = nix {};
   crossSystem = nixpkgs.lib.systems.examples.armv7l-hf-multiplatform // {
     config = "armv7l-unknown-linux-gnueabihf";
