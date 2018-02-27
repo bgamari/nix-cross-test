@@ -22,7 +22,6 @@ let
       fonts.fontconfig.enable = false;
       security.polkit.enable = false;
       security.rngd.enable = false;
-      environment.noXlibs = true;
       system.autoUpgrade.enable = false;
       services.udisks2.enable = false;
       services.nixosManual.enable = false;
@@ -41,6 +40,11 @@ let
 
       # FIXME: this probably should be in installation-device.nix
       users.extraUsers.root.initialHashedPassword = "";
+
+      # FIXME: Unfortunately the package overrides implied by this currently don't
+      # work due to our use of nixpkgs.pkgs, which breaks
+      # nixpkgs.config.packageOverrides; worked around in overlay.nix
+      environment.noXlibs = true;
     };
   };
 

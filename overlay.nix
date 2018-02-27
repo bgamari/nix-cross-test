@@ -32,5 +32,10 @@ let
     # We really don't need libapparmor and it is a pain to cross compile due to
     # its perl bindings
     systemd = super.systemd.override { libapparmor = null; };
+
+    # From no-x-libs.nix: only needed until proper crossSystem support for nixos
+    # is available.
+    dbus = super.dbus.override { x11Support = false; };
+    pinentry = super.pinentry_ncurses;
   };
 in this
