@@ -10,7 +10,7 @@ let
     openssl.system = "linux-armv4";
     platform = nixpkgsCross.pkgs.platforms.armv7l-hf-multiplatform // {
       kernelBaseConfig = "xilinx_zynq_defconfig";
-    uboot = nixpkgs.ubootMicrozed;
+      uboot = nixpkgs.ubootMicrozed;
     };
   };
 
