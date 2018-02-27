@@ -15,7 +15,7 @@ let
 
   nixos = import ./nixpkgs/nixos {
     configuration = {
-      nixpkgs.pkgs = builtins.trace (builtins.typeOf pkgs) pkgs;
+      nixpkgs.pkgs = pkgs;
 
       imports = [ config_module ];
 
