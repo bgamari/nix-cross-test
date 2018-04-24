@@ -33,6 +33,7 @@ let
       imports = [ config_module ];
 
       environment.noXlibs = true;
+      documentation.info.enable = false;
       fonts.fontconfig.enable = false;
       security.polkit.enable = false;
       security.rngd.enable = false;
